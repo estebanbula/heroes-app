@@ -1,0 +1,72 @@
+<ng-template #loading>
+  <mat-grid-list cols="1">
+    <mat-grid-tile>
+      <mat-spinner></mat-spinner>
+    </mat-grid-tile>
+  </mat-grid-list>
+</ng-template>
+
+<div *ngIf="hero; else loading" class="grid grid-cols-2 min-h-full justify-center px-6 py-12">
+  <div class="flex-none w-49 relative">
+    <img class="rounded-md" [src]="hero | heroImage" [alt]="hero.alter_ego">
+  </div>
+  <div class="flex-auto p-6">
+    <div class="flex flex-wrap">
+      <h2 class="flex-auto text-lg font-semibold text-slate-900">{{hero.superhero}}</h2>
+    </div>
+    <div class="text-lg font-semibold text-slate-500">
+      {{hero.publisher}}
+    </div>
+    <div class="text-lg font-semibold text-slate-500">
+      <label class="text-slate-600">First appearance: </label>{{hero.first_appearance}}
+    </div>
+    <div class="text-lg font-semibold text-slate-500">
+      <label class="text-slate-600">Other names: </label>
+      <span *ngFor="let name of hero.characters.split(',') | slice:0:3"
+            class="inline-flex items-center rounded-md bg-slate-50 px-2 py-1 text-xs font-medium text-slate-600 ring-1 ring-inset ring-slate-500/10">
+        {{name}}
+      </span>
+    </div>
+    <div class="text-lg font-semibold text-slate-500">
+      <label class="text-slate-600">Biography: </label>
+      <p>{{hero.description}}</p>
+    </div>
+    <div class="pt-5 justify-start">
+      <button (click)="goBack()"
+              class="text-slate-600 hover:bg-slate-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">go
+        back...
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<!--<div *ngIf="hero; else loading" class="grid p-2">
+  <mat-card class="col-12 sm:col-6">
+    <mat-card-header>
+      <mat-card-title>{{hero.alter_ego}}</mat-card-title>
+      <mat-card-subtitle>{{hero.superhero}}</mat-card-subtitle>
+    </mat-card-header>
+    <img [src]="hero | heroImage" [alt]="hero.superhero" mat-card-image>
+  </mat-card>
+  <mat-card class="col-12 sm:col-6">
+    <mat-card-header>
+      <mat-card-title>Information</mat-card-title>
+      <mat-card-subtitle>{{hero.superhero}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item>First appearance: {{hero.first_appearance}}</mat-list-item>
+        <mat-list-item>Played by: {{hero.characters}}</mat-list-item>
+        <mat-list-item>Publication date: {{hero.publisher}}</mat-list-item>
+        <mat-list-item>Real name: {{hero.alter_ego}}</mat-list-item>
+      </mat-list>
+      <button mat-button
+              color="primary"
+              (click)="goBack()">
+        Go back
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+    </mat-card-content>
+  </mat-card>
+</div>-->

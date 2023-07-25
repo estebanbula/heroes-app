@@ -1,0 +1,7 @@
+<h1 class="flex-auto text-lg font-semibold text-slate-900">Heroes</h1>
+<div class="grid grid-cols-2 pt-2 pb-2">
+  <div *ngFor="let hero of heroes"
+       class="rounded-md hover:ring-1 hover:ring-slate-400">
+    <heroes-hero-card [hero]="hero"></heroes-hero-card>
+  </div>
+</div>

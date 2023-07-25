@@ -1,0 +1,31 @@
+<div class="flex font-sans p-1">
+  <div class="flex-none w-48 relative">
+    <img class="rounded-md" [src]="hero | heroImage" [alt]="hero.alter_ego">
+  </div>
+  <div class="flex-auto p-6">
+    <div class="flex flex-wrap">
+      <h2 class="flex-auto text-lg font-semibold text-slate-900">{{hero.superhero}}</h2>
+    </div>
+    <div class="text-lg font-semibold text-slate-500">
+      {{hero.publisher}}
+    </div>
+    <div class="text-lg font-semibold text-slate-500">
+      <label class="text-slate-600">First appearance: </label>{{hero.first_appearance}}
+    </div>
+    <div class="text-lg font-semibold text-slate-500">
+      <label class="text-slate-600">Other names: </label>
+      <span *ngFor="let name of hero.characters.split(',') | slice:0:3"
+            class="inline-flex items-center rounded-md bg-slate-50 px-2 py-1 text-xs font-medium text-slate-600 ring-1 ring-inset ring-slate-500/10">
+        {{name}}
+      </span>
+    </div>
+    <div class="pt-5 justify-between">
+      <button [routerLink]="['/heroes/edit', hero.id]"
+              class="text-slate-600 hover:bg-slate-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">edit
+      </button>
+      <button [routerLink]="['/heroes/', hero.id]"
+              class="text-slate-600 hover:bg-slate-700 hover:text-white rounded-md px-3 py-2 text-sm">more...
+      </button>
+    </div>
+  </div>
+</div>
