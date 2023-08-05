@@ -1,16 +1,16 @@
 <div class="flex font-sans p-1">
   <div class="flex-none w-48 relative">
-    <img class="rounded-md" [src]="hero | heroImage" [alt]="hero.alter_ego">
+    <img class="rounded-md" [src]="hero | heroImage" [alt]="hero.alterEgo">
   </div>
   <div class="flex-auto p-6">
     <div class="flex flex-wrap">
       <h2 class="flex-auto text-lg font-semibold text-slate-900">{{hero.superhero}}</h2>
     </div>
     <div class="text-lg font-semibold text-slate-500">
-      {{hero.publisher}}
+      {{hero.publisher.name}}
     </div>
     <div class="text-lg font-semibold text-slate-500">
-      <label class="text-slate-600">First appearance: </label>{{hero.first_appearance}}
+      <label class="text-slate-600">First appearance: </label>{{hero.firstAppearance}}
     </div>
     <div class="text-lg font-semibold text-slate-500">
       <label class="text-slate-600">Other names: </label>

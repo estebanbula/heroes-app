@@ -9,6 +9,8 @@ import {AddHeroPageComponent} from './pages/add-hero-page/add-hero-page.componen
 import {SearchHeroPageComponent} from './pages/search-hero-page/search-hero-page.component';
 import {HeroCardComponent} from './components/hero-card/hero-card.component';
 import {HeroImagePipe} from './pipes/hero-image.pipe';
+import {ReactiveFormsModule} from "@angular/forms";
+import {MatSnackBarModule} from "@angular/material/snack-bar";
 
 
 @NgModule({
@@ -23,7 +25,10 @@ import {HeroImagePipe} from './pipes/hero-image.pipe';
   ],
   imports: [
     CommonModule,
-    HeroesRoutingModule
+    HeroesRoutingModule,
+    ReactiveFormsModule,
+    MatSnackBarModule
   ]
 })
-export class HeroesModule { }
+export class HeroesModule {
+}

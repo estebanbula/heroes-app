@@ -3,6 +3,8 @@ import {HeroesService} from "../../services/heroes.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {switchMap, tap} from "rxjs";
 import {Hero} from "../../interfaces/hero.interface";
+import {PublisherService} from "../../services/publisher.service";
+import {Publisher} from "../../interfaces/publisher.interface";
 
 @Component({
   selector: 'hero-page',
